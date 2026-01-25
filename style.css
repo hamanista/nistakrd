@@ -1,109 +1,60 @@
-/* پاککردنەوەی ستایلە کۆنەکان */
-* {
+/* ١. دڵنیابە کە body هەموو شاشەکە دەگرێتەوە */
+body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    background-color: #0f172a; /* ڕەنگی پشتەوەی تۆخ */
+    background-color: #0f172a;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    font-family: 'Vazirmatn', sans-serif;
-}
-
-.main-wrapper {
+    min-height: 100vh; /* ئەمە زۆر گرنگە بۆ ناوەڕاست کردن */
     width: 100%;
-    display: flex;
-    justify-content: center;
-    padding: 20px;
 }
 
-/* بۆکسی شووشەیی مۆدێرن */
+/* ٢. چاککردنی بۆکسەکە بۆ ئەوەی لەسەر کۆمپیوتەر بچووک نەبێت */
 .social-card {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 40px;
-    padding: 40px 30px;
-    width: 100%;
-    max-width: 320px;
+    padding: 50px 40px;
+    width: 90%;          /* لەسەر مۆبایل ٩٠٪ی شاشەکە دەگرێت */
+    max-width: 400px;    /* لەسەر کۆمپیوتەر تا ٤٠٠ پیکسڵ گەورە دەبێت */
+    min-width: 300px;    /* ڕێگری دەکات لە زۆر بچووک بوونەوە */
     text-align: center;
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
-    transition: 0.3s;
+    display: flex;       /* بۆ ئەوەی ناوەڕۆکەکە تێکەڵ نەبێت */
+    flex-direction: column;
+    align-items: center;
 }
 
-/* ستایلی وێنەی لۆگۆ */
-.profile-area {
+/* ٣. گەورەکردنی وێنەکە */
+.profile-img {
+    width: 110px;        /* کەمێک گەورەترمان کرد */
+    height: 110px;
+    border-radius: 50%;
+    border: 4px solid rgba(255, 255, 255, 0.2);
     margin-bottom: 20px;
 }
 
-.profile-img {
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    border: 3px solid rgba(255, 255, 255, 0.2);
-    object-fit: cover;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-}
-
-/* ناونیشان */
-.title {
-    color: #ffffff;
-    font-size: 24px;
-    margin-bottom: 30px;
-    font-weight: 700;
-}
-
-/* ستوونی ئایکۆنەکان */
+/* ٤. چاککردنی مەودای نێوان ئایکۆنەکان */
 .social-column {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 25px;           /* بۆشایی زیاتر بۆ ئەوەی تێکەڵ نەبن */
+    width: 100%;         /* بۆ ئەوەی هەموو پانایی بۆکسەکە بەکاربێنن */
     align-items: center;
 }
 
-/* ستایلی ئایکۆنەکان */
+/* ٥. ستایلی لینکەکان */
 .s-icon {
-    width: 60px;
-    height: 60px;
+    width: 70px;         /* کەمێک گەورەتر بۆ کۆمپیوتەر */
+    height: 70px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 20px; /* چوارگۆشەی خڕ */
-    font-size: 26px;
+    border-radius: 20px;
+    font-size: 30px;     /* قەبارەی ئایکۆنەکە گەورەتر */
     color: white;
     text-decoration: none;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-/* ڕەنگی سۆشیالەکان */
-.facebook { background-color: #1877f2; }
-.instagram { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); }
-.snapchat { background-color: #FFFC00; color: #000; }
-.tiktok { background-color: #000; border: 1px solid #444; }
-
-/* جوڵەکان کاتێک ماوس دەچێتە سەری */
-.s-icon:hover {
-    transform: translateY(-10px) scale(1.1) rotate(5deg);
-}
-
-/* درەوشانەوە (Glow Effect) کاتێک ماوس دەچێتە سەری */
-.facebook:hover { box-shadow: 0 0 25px #1877f2; }
-.instagram:hover { box-shadow: 0 0 25px #dc2743; }
-.snapchat:hover { box-shadow: 0 0 25px #FFFC00; }
-.tiktok:hover { box-shadow: 0 0 25px #ffffff; }
-
-/* جوڵە کاتێک پەنجەی لێ دەدەیت (بۆ مۆبایل) */
-.s-icon:active {
-    transform: scale(0.9);
-}
-
-.footer-text {
-    color: rgba(255, 255, 255, 0.3);
-    font-size: 12px;
-    margin-top: 25px;
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
