@@ -59,8 +59,12 @@ body {
     transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.s-icon:hover {
-    transform: translateY(-12px) scale(1.15) rotate(360deg); /* خولانەوەی تەواو و بەرزبوونەوە */
-    border-radius: 50%; /* کاتێک ماوس دەچێتە سەری دەبێتە بازنەی تەواو */
-    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* جوڵەیەکی لاستیکی */
+@keyframes pulse-glow {
+    0% { box-shadow: 0 0 5px rgba(255,255,255,0.1); }
+    50% { box-shadow: 0 0 15px rgba(255,255,255,0.3); }
+    100% { box-shadow: 0 0 5px rgba(255,255,255,0.1); }
+}
+
+.s-icon {
+    animation: pulse-glow 2s infinite;
 }
