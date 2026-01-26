@@ -1,3 +1,4 @@
+/* ١. ڕێکخستنی بنەڕەتی */
 * {
     margin: 0;
     padding: 0;
@@ -5,7 +6,7 @@
 }
 
 body {
-    background-color: #0f172a; /* ڕەنگی پشتەوەی مۆدێرن */
+    background-color: #0f172a; /* پشتەوەی تۆخی مۆدێرن */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,32 +14,35 @@ body {
     font-family: 'Vazirmatn', sans-serif;
     color: white;
 }
+
+/* ٢. بۆکسی سەرەکی (Card) */
 .social-card {
     background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(15px);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 40px;
     padding: 40px 20px;
-    
-    /* پانایی بۆکسەکە */
     width: 90%;
-    max-width: 350px; /* ئەمە وادەکات لەسەر کۆمپیوتەر زۆر پان و ناشرین نەبێت */
-    
-    margin: auto;
+    max-width: 350px; /* ڕێگری دەکات لەوەی لە کۆمپیوتەر زۆر پان بێتەوە */
+    text-align: center;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
 }
 
+/* ٣. وێنەی پرۆفایل */
 .profile-img {
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    border: 3px solid #38bdf8;
-    margin-bottom: 15px;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 20px;
     object-fit: cover;
 }
 
+/* ٤. تایمەر و سڵاو */
 .welcome-section {
     margin-bottom: 25px;
 }
@@ -52,97 +56,59 @@ body {
 #digital-clock {
     font-size: 20px;
     font-weight: bold;
-    background: rgba(0,0,0,0.2);
-    display: inline-block;
+    background: rgba(0,0,0,0.3);
     padding: 5px 15px;
-    border-radius: 8px;
-    letter-spacing: 1px;
+    border-radius: 10px;
+    display: inline-block;
 }
 
-.title {
-    font-size: 22px;
-    margin-bottom: 25px;
-}
-
+/* ٥. ستوونی ئایکۆنەکان - لێرە کێشەی باریکبوونەوەمان چارەسەر کردووە */
 .social-column {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    align-items: center; /* بۆ ئەوەی ڕێک لە ناوەڕاست بن */
+    align-items: center;
     width: 100%;
 }
 
 .s-icon {
-    /* لێرەدا قەبارەیەکی جێگیر دادەنێین بۆ ئەوەی باریک نەبێتەوە */
-    width: 80px;  /* پانایی ئایکۆنەکە */
-    height: 80px; /* بەرزی ئایکۆنەکە - دەبێت وەک پاناییەکە بێت */
+    /* قەبارەی جێگیر: وادەکات ئایکۆنەکە هەمیشە بازنەیی بمێنێتەوە */
+    width: 75px; 
+    height: 75px;
+    flex-shrink: 0; /* ڕێگری دەکات لە پەستێورانی ئایکۆنەکە */
     
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%; /* بۆ ئەوەی بە تەواوی بازنەیی بێت */
-    
-    font-size: 35px; /* قەبارەی لۆگۆکە */
+    border-radius: 50%; /* بازنەیی تەواو */
+    font-size: 32px;
     color: white;
     text-decoration: none;
-    
-    /* پاراستنی شێوەکە لە کاتی گۆڕانی شاشە */
-    flex-shrink: 0; 
-    
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-/* زیادکردنی چوارچێوەیەکی باریک بۆ زیاتر دیاربوون */
-.s-icon {
     border: 2px solid rgba(255, 255, 255, 0.1);
-}
-
-.s-icon:hover {
-    transform: translateY(-10px) scale(1.1);
-    border-color: rgba(255, 255, 255, 0.5);
-}
-
-.s-icon {
-    width: 100%;           /* هەموو پانایی بۆکسەکە دەگرێتەوە */
-    height: 70px;          /* بەرزییەکەی زیاد کرا بۆ 70px */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 20px;
-    font-size: 35px;       /* قەبارەی لۆگۆکانی ناوەوە زۆر گەورە کرا */
-    color: white;
-    text-decoration: none;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    margin-bottom: 5px;    /* کەمێک بۆشایی لە ژێر هەر دانەیەک */
 }
 
-/* بۆ ئەوەی دڵنیابیتەوە لۆگۆکانی ناوەوە (i) وەک یەک گەورەن */
-.s-icon i {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px; 
-    text-align: center;
-}
-/* ڕەنگەکان */
+/* ٦. ڕەنگەکان بە شێوەی Gradient بۆ جوانی زیاتر */
 .facebook { background: #1877f2; }
 .instagram { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); }
-.snapchat { background: #FFFC00; color: black; }
-.tiktok { background: #000; border: 1px solid #444; }
+.snapchat { background: #FFFC00; color: #000; }
+.tiktok { background: #000; }
 
-/* جوڵەی هۆڤەر */
+/* ٧. جوڵە (Hover) */
 .s-icon:hover {
-    transform: translateY(-5px) scale(1.03);
-    filter: brightness(1.2);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    transform: translateY(-8px) scale(1.1);
+    border-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
 }
+
+/* درەوشانەوەی تایبەت لە کاتی هۆڤەر */
+.facebook:hover { box-shadow: 0 0 20px #1877f2; }
+.instagram:hover { box-shadow: 0 0 20px #dc2743; }
+.snapchat:hover { box-shadow: 0 0 20px #FFFC00; }
+.tiktok:hover { box-shadow: 0 0 20px #ffffff; }
 
 .footer-text {
     margin-top: 30px;
-    font-size: 12px;
-    opacity: 0.5;
+    font-size: 11px;
+    opacity: 0.4;
 }
-
-
-
-
