@@ -13,15 +13,14 @@ body {
     font-family: 'Vazirmatn', sans-serif;
     color: white;
 }
-
 .social-card {
     background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 40px;
     padding: 40px;
-    width: 90%;
-    max-width: 380px;
+    width: 95%;           /* لەسەر مۆبایل پانتر دەبێت */
+    max-width: 420px;     /* لەسەر کۆمپیوتەر گەورەتر دەبێت */
     text-align: center;
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
 }
@@ -107,4 +106,5 @@ body {
     font-size: 12px;
     opacity: 0.5;
 }
+
 
