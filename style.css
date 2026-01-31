@@ -1,4 +1,3 @@
-/* ١. ڕێکخستنی گشتی و فۆنت */
 * {
     margin: 0;
     padding: 0;
@@ -12,21 +11,88 @@ body {
     align-items: center;
     min-height: 100vh;
     font-family: 'Vazirmatn', sans-serif;
-    color: white;
 }
 
-.main-wrapper {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    padding: 21px;
-}
-
-/* ٢. چاککردنی بۆکسە سەرەکییەکە (کارتەکە) */
+/* کارتە سەرەکییەکە - پاناییەکەی جێگیر کراوە بۆ ئەوەی باریک نەبێت */
 .social-card {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background: #1e293b; /* ڕەنگێکی تۆخی وەک وێنەکە */
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 50px; /* لێواری زۆر خڕ وەک وێنەکە */
-    padding: 40px 2
+    border-radius: 60px; /* لێواری زۆر خڕ */
+    padding: 40px 10px;
+    width: 290px; /* پانایی جێگیر بۆ ڕێگری لە باریکبوونەوە */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5);
+}
+
+.profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid rgba(255, 255, 255, 0.1);
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.welcome-section {
+    text-align: center;
+    margin-bottom: 25px;
+    width: 100%;
+}
+
+#greeting {
+    color: #38bdf8;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#digital-clock {
+    background: #0f172a; /* ڕەنگی کاتژمێرەکە وەک وێنەکە */
+    color: white;
+    display: inline-block;
+    width: 170px; /* پانایی جێگیر بۆ کاتژمێرەکە */
+    padding: 10px 0;
+    border-radius: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+.title {
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 25px;
+    line-height: 1.4;
+}
+
+.social-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.s-icon {
+    width: 85px; 
+    height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 40px;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s ease;
+    flex-shrink: 0; /* ناهێڵێت باریک ببێتەوە */
+}
+
+/* ڕەنگی ئایکۆنەکان */
+.facebook { background: #1877f2; }
+.instagram { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); }
+.snapchat { background: #FFFC00; color: black; }
+.tiktok { background: #000; border: 1px solid #333; }
+
+.s-icon:active { transform: scale(0.9); }
