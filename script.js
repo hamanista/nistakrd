@@ -1,29 +1,20 @@
-// تایمەر و سڵاو
-function updateInterface() {
+function updateClock() {
     const now = new Date();
-    const hours = now.getHours();
-    const timeStr = now.toLocaleTimeString('en-GB'); // کاتژمێر
-    
+    const timeStr = now.toLocaleTimeString('en-GB', { hour12: false });
     document.getElementById('digital-clock').innerText = timeStr;
     
-    let greet = "بەخێربێیت";
-    if (hours < 12) greet = "بەیانیت باش ☀️";
-    else if (hours < 18) greet = "نیوەڕۆت باش 🌤️";
-    else greet = "ئێوارەت باش 🌙";
+    const hours = now.getHours();
+    let greet = "";
+    if (hours >= 5 && hours < 12) greet = "بەیانیت باش ☀️";
+    else if (hours >= 12 && hours < 18) greet = "نیوەڕۆت باش 🌤️";
+    else if (hours >= 18 && hours < 22) greet = "ئێوارەت باش 🌙";
+    else greet = "شەوت شاد ✨";
     
     document.getElementById('greeting').innerText = greet;
 }
 
-setInterval(updateInterface, 1000);
-updateInterface();
+setInterval(updateClock, 1000);
+updateClock();
 
-// --- سیکیورێتی ---
-// ڕێگری لە کلیکی ڕاست
+// سیکیورێتی
 document.addEventListener('contextmenu', e => e.preventDefault());
-
-// ڕێگری لە شەرتکەتەکانی کیبۆرد (Inspect Element)
-document.onkeydown = function(e) {
-    if (e.keyCode == 123 || (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74)) || (e.ctrlKey && e.keyCode == 85)) {
-        return false;
-    }
-};
