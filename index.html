@@ -1,7 +1,61 @@
-<a href="https://facebook.com/yourpage" target="_blank">
-  <img src="facebook-icon.png" alt="Facebook" style="width:40px;">
-</a>
+<!DOCTYPE html>
+<html lang="ku" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        /* ستایلی گشتی بۆ تاقیکردنەوە */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            margin: 0;
+        }
 
-<a href="https://instagram.com/yourusername" target="_blank">
-  <img src="instagram-icon.png" alt="Instagram" style="width:40px;">
-</a>
+        /* کۆنتێنەری سەرەکی ئایکۆنەکان */
+        .social-menu {
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-menu a {
+            text-decoration: none;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+            border-radius: 50%; /* بازنەیی */
+            font-size: 25px;
+            color: #333;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease-in-out; /* خێرایی جوڵە */
+        }
+
+        /* ستایل بۆ کاتی بردنی ماوس بۆ سەر ئایکۆنەکان */
+        .social-menu a:hover {
+            transform: translateY(-10px); /* کەمێک بەرز دەبێتەوە */
+            color: #fff;
+        }
+
+        /* ڕەنگی تایبەت بە هەر سۆشیال میدیایەک لە کاتی Hover */
+        .social-menu a.facebook:hover { background-color: #1877F2; }
+        .social-menu a.instagram:hover { background-color: #E4405F; }
+        .social-menu a.twitter:hover { background-color: #000000; }
+        .social-menu a.linkedin:hover { background-color: #0077B5; }
+    </style>
+</head>
+<body>
+
+    <div class="social-menu">
+        <a href="#" class="facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="twitter" target="_blank"><i class="fab fa-x-twitter"></i></a>
+        <a href="#" class="linkedin" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+
+</body>
+</html>
